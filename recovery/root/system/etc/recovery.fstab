@@ -80,7 +80,7 @@ my_region /my_region erofs ro,barrier=1 wait,logical,first_stage_mount,nofail
 my_stock /my_stock ext4 ro,barrier=1 wait,logical,first_stage_mount,nofail
 my_stock /my_stock erofs ro,barrier=1 wait,logical,first_stage_mount,nofail
 
-/dev/block/by-name/metadata /metadata ext4 noatime,nosuid,nodev,discard wait,check,formattable,first_stage_mount,metadata_csum
+/dev/block/by-name/metadata /metadata ext4 noatime,nosuid,nodev,discard,data=journal,commit=1 wait,check,formattable,first_stage_mount,metadata_csum
 /dev/block/by-name/dtbo /dtbo emmc defaults defaults
 /dev/block/by-name/engineering_cdt /engineering_cdt emmc defaults defaults
 /dev/block/by-name/vbmeta_vendor /vbmeta_vendor emmc defaults first_stage_mount,nofail,
